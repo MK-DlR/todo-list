@@ -1,0 +1,147 @@
+5/30/25:
+
+- Update restoreCardColors and color pickers to save user color choices to localStorage
+- Create saveProjectsToLocal function to save project and todo information to localStorage
+
+5/29/25:
+
+- Add username input to localStorage
+- Adjust fonts
+- Add user greeting and current date to header
+- Create add new user button to display user name on header
+- Fix expanding all cards causing issues by covering each other and overflowing their containers
+- Fix manually adding checklist item coming out as blank
+- Create helper function to handle adding checklist items
+- Update pseudocode
+
+5/28/25:
+
+- Create create-modal.js to allow user to create new todo list items
+- Add edit priority to edit todo card
+- Remove unnecessary edit-todos.js module
+- Adjust priority colors to bootstrap alert colors
+- Fix header not extending across page when page horizontally scrolls due to added project cards
+- Fix todo card changing to default color when being moved to different project list
+- Fix project cards losing user selected color when moved and/or new checklist item added
+- Fix todo card changing back to default color after being edited/having new item added
+- Stop card from collapsing after new checklist item is added
+- Fix trying to move todo list items closing expand section
+- Fix todo card losing user selected color when moved and/or new checklist item added
+- Create updateSidebarProjectsList to visually update project lists on sidebar
+- Remove placeholder borders
+- Update css with palette
+
+5/27/25:
+
+- Add nonfunctional sidebar buttons for create new project and create new todo item
+- Create collapsible content container to allow for expanding/minimizing card content
+- Add plus sign svg icon to checklist to allow addition of new checklist items
+- Add edit todo list item card form full functionality
+- Add form submission functionality to edit form within modal
+- Create edit-modal.js to hold form for editing existing todo list item cards
+- Add up and down checklist navigational arrow functionality to allow moving items up and down within the list
+- Create nonfunctional up and down navigation arrows for checklist that show on hover
+- Add checklist item edit button functionality to allow editing of text, deleting if prompt is left blank
+- Create nonfunctional edit button for checklist that shows on item hover
+
+5/24/25:
+
+- Allow user to toggle todo list item incomplete after having been marked complete, will return to previous priority/color
+- Allow user to toggle todo list item complete and have border turn green
+- Attach priority to todo list item card border (0 = green, 1 = red, 2 = orange, 3 = yellow)
+- Add left border to todo list item cards
+- Add delete confirmation check to prevent accidental project or todo list deletion
+- Add color picker function to project list cards and todo list item cards that allows user to choose own color
+
+5/23/25:
+
+- Add left and right arrow functionality to todo list item cards to enable moving to a different project list
+- Rename autoPopular to createList
+- Add left and right arrow functionality to project cards
+- Fix issue with header and sidebar content populating twice when a second project list is added
+- Move test todo creation to default-project.js
+- Add down arrow functionality
+- Create refreshTodoList function to handle refreshing after edits
+- Add up arrow functionality for todo list item cards
+- Extract todo list item card creation logic into createTodoCard
+- Move header elements inline with icons
+- Add functionality to delete project list
+- Add nonfunctional delete, edit, and arrow icons to project list cards
+- Create createIcon helper function for page-load.js
+- Reduce unnecessary svg import code in page-load.js
+- Add nonfunctional up/down navigation arrows to todo list item cards
+- Update pseudocode
+
+5/22/25:
+
+- Add delete todo list item functionality
+- Add nonfunctional complete, up arrow, and down arrow icons to todo list item cards
+- Add nonfunctional delete and edit icons to todo list item cards
+- Add basic css styling to todo list item cards
+- Add strike-through effect to completed checklist items
+- Add checkboxes to checklist todo items
+- Add todo list items to cards within project cards
+- Update pseudocode
+
+5/21/25:
+
+- Create basic DOM elements in page-load to plan page layout
+- Consolidate reorderTodos and reorderProjects into reorderItems to allow reordering of todo list items, project lists, and todo checklist items via index
+- Create reorderProjects to allow reordering project lists via index
+- Create reorderTodos to allow reordering todo list items via index
+- Create reorder-items.js 
+- Create deleteChecklistItem to delete checklist items via index
+- Create deleteTodo to delete todo list items via index
+- Create deleteProject to delete project lists via index 
+- Change findTodoByTitle to findTodoByIndex to find todo list items via their index number
+- Change findProjectByTitle to findProjectByIndex to find project lists via their index number
+- Change toggleChecklistItemByTitle to toggleChecklistItemByIndex to toggle checklist items via their index number
+- Change editChecklist to editChecklistItem and fix to only change specified checklist item within todo
+- Create findChecklistByIndex to find checklist items via their index number
+- Change search-by-title.js to search-by.js 
+- Update pseudocode 
+
+5/20/25:
+
+- Add random uuids to projects, checklist items, and todo list items
+- Move findProjectByTitle and findTodoByTitle to search-by-file.js
+- Create toggleChecklist to toggle checklist item completion
+- Create toggleChecklistItemByTitle to find checklist items by title
+- Edit createTodo and assignTodo to make checklist into array of objects
+- Set todo items completion to "N" by default
+- Create toggleTodoComplete to toggle todo list items complete or incomplete
+- Consolidate various imports in index.js
+- Consolidate exposed functions in index.js into functionsToExpose
+- Create editProjectTitle to edit project list title
+- Create findProjectByTitle to allow searching and editing via project list title
+- Create editChecklist to edit todo item checklist
+- Create editNotes to edit todo item notes
+- Create editPriority to edit todo item priority
+- Create editDuedate to edit todo item due date
+- Create editDescription to edit todo item description
+- Create findTodoByTitle to allow searching and editing via todo item title
+- Create editTitle to edit todo item title
+- Update pseudocode
+- Create pushDefault to push default project list to projectList array
+- Move assignTodo to own module
+
+5/19/25:
+
+- Create assignTodo function which takes user input to select a project list and create and assign a todo list item to it
+- Create createProject function that stores projects created from user input as objects with arrays for todo items
+- Change defaultProject to be an object that stores names and todo items as array
+- Export defaultProject array to be accessible via console.log in index
+
+5/16/25:
+
+- Create create-project js module for making new project lists
+- Create default-project js module to push todo items to default project array
+- Create factory function for adding new todo items
+- Create page-load and create-todo js modules
+
+5/15/25:
+
+- Create template.html and styles.css files
+- Change webpack devServer port to 3000
+- Set up webpack
+- Create README, changelog, and pseudocode

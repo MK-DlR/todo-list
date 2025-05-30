@@ -1,0 +1,263 @@
+/* styles.css */
+
+/* remove default margin and padding */
+* {
+    margin: 0px;
+    padding: 0px;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: white;
+    height: 100vh;
+}
+
+h1, h2, h3, h4, .createNewProject, .createNewTodo, .addNewUser {
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
+}
+
+#container {
+    min-width: max-content; 
+}
+
+header {
+    background-color: #95b4ee;
+    padding: 5px;
+    height: 50px;
+    border-radius: 0; /* remove rounded corners */
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.headerContent {
+    margin-left: 30px;
+    color: #fff;
+}
+
+#wrapper {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#content {
+    flex-grow: 1;
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 15px; /* spacing between project cards */
+    border-radius: 0; /* remove rounded corners */
+}
+
+/* sidebar */
+#sidebar {
+    width: 300px;
+    background-color: #cddaf3; 
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 0; /* remove rounded corners */
+}
+
+.sidebarContent {
+    padding: 10px;
+}
+
+.newProjContainer, .newTodoContainer, .addUserName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.createNewProject:hover, .createNewTodo:hover, .addNewUser:hover {
+    background-color: #d2f7d2;
+}
+
+.addItemClone, .addItemClone2, .addUserImg {
+    padding-top: 1px;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+
+.currentProjectsList {
+    padding-top: 5px;
+    padding-left: 15px;
+}
+
+.sidebar-project-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    border-left: 3px solid #007bff;
+}
+
+.sidebar-project-item:hover {
+    background-color: #e9ecef;
+}
+
+/* project list cards */
+.projectCard {
+    background-color: rgb(242, 244, 248);
+    min-height: 100vh; 
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+.project-icon-bar-left,
+.project-icon-bar-right {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.projectHeader {
+    /* border: 3px solid blue; /* temporary/placeholder */
+    text-align: center;
+    flex-grow: 1;
+}
+
+.colorPicker {
+    width: 20px;
+    height: 20px;
+}
+
+/* hide eyedropper from colorpick element */
+.colorpick-eyedropper-input-trigger {
+    display: none;
+}
+
+/* todo item cards */
+.todoCard {
+    background-color: #fff; /* lighter peach-white */
+    min-height: 100px;
+    width: 300px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.todoCard:last-child {
+margin-bottom: 15px;
+}
+
+.upper-icon-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end; 
+}
+
+.titleHeader {
+    text-align: center;
+}
+
+.descHeaders {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.checklistHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.addIconImg2 {
+    margin-right: 250px;
+    flex-shrink: 0;
+}
+
+/* collapsible content section */
+.expandButton {
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+}
+
+.active, .expandButton:hover {
+    font-style: italic;
+}
+
+.expandedContent {
+    display: none;
+    overflow: hidden;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+
+.checkLabel {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* hide edit button and arrows by default */
+.checkContainer .checkEdit,
+.checkContainer .arrowUpImgChecklist,
+.checkContainer .arrowDownImgChecklist,
+.checkContainer .addIconImg {
+    display: none;
+    max-height: 12px;
+}
+
+/* show edit button and arrows on hover */
+.checkContainer:hover .checkEdit,
+.checkContainer:hover .arrowUpImgChecklist,
+.checkContainer:hover .arrowDownImgChecklist,
+.checkContainer:hover .addIconImg {
+    display: inline-block;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #8B8B8B; /* slightly brighter muted gray */
+}
+
+.lower-icon-bar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end; 
+    margin-top: 10px; 
+}
+
+.checkIconImg.checked {
+    filter:
+        invert(26%)
+        sepia(42%)
+        saturate(1500%)
+        hue-rotate(170deg)
+        brightness(90%)
+        contrast(105%);
+}
+
+/* edit form modal */
+#editTitle, #editDesc, #editDate, #editPriority, #editNotes {
+    width: 175px;
+    height: 25px;
+}
+
+.closeButton, .submitInput {
+    margin: 5px;
+    padding: 10px;
+    width: 75px;
+}

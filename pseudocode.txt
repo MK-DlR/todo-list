@@ -1,0 +1,368 @@
+PROJECT:
+
+1. todo list items should be objects
+    1a. that are dynamically created by using either
+        - factories 
+        - or constructors/classes
+Done
+
+2. todo list items should have properties
+    2a. title
+    2b. description
+    2c. dueDate
+    2d. priority
+    2e. notes
+    2f. checklist
+        - allow each todo list item to have subtasks
+Done
+
+3. page should have project lists for todo list items to go in
+    3a. when app is first opened
+        - there should be a default project
+        - where all todos are put
+    Done
+    3b. user should be able to create new projects
+        - and choose which project their todos go into
+    Done
+Done
+
+4. create separate modules for
+    4a. application logic
+        - default project list
+        Done
+        - creating new todos
+        Done
+        - create new project lists
+        Done
+        - assigning todos to project lists
+        Done
+        - editing todo items
+            - title
+            Done
+            - description
+            Done
+            - due date
+            Done
+            - priority
+            Done
+            - notes
+            Done
+            - checklist items
+            Done
+        Done
+        - edit project lists
+        Done
+        - toggling as complete
+            - todo checklist items
+            Done
+            - todo items
+            Done
+        Done
+        - deleting
+            - todo items
+            Done
+            - project lists
+            Done
+            - checklist items
+            Done
+        Done
+        - change order of
+            - project lists
+            Done
+            - todo items
+            Done
+            - todo checklist items
+            Done
+        Done
+    4b. DOM related stuff
+    Done
+Done
+
+5. project list creation, styling, and layout
+    5a. dynamically create project list cards 
+        - via DOM
+    Done
+    5b. each project list should be a container
+        - with todo list item cards inside
+    Done
+    5c. allow users to change background colors
+        - individually per container
+    Done
+    5d. edit button
+        - to change project list title
+    Done
+    5e. navigation arrows
+        - left arrow to move project list 1 slot left within content
+            - moves item 1 slot more to the front in array
+        - right arrow to move project list 1 slot right within content
+            - moves item 1 slot more to the back in array
+    Done
+    5f. delete button
+        - removes project list array
+    Done
+Done
+
+6. todo list item creation, styling, and layout
+    6a. dynamically create todo list item cards 
+        - via DOM
+    Done
+    6b. each todo list item should be a container (card)
+        - within project list container
+    Done
+    6c. allow users to change background colors
+        - individually per card
+    Done
+    6d. checkboxes for checklist items
+        - to toggle complete/incomplete
+            - strikeout when complete
+        Done
+        - up/down navigation arrows 
+            - on hover
+            - to move order within checklist
+            - https://www.w3schools.com/howto/howto_css_display_element_hover.asp
+        Done
+    Done
+    6e. checkmark button
+        - toggles item complete
+        Done
+        - checkmark turns green
+        Done
+        - changes item priority to 0 
+            - priority color changes to green (6f)
+        Done
+    Done
+    6f. edit buttons
+        - checklist item edit buttons
+            - one per checklist item
+            - leaving checklist item edit blank deletes it
+        Done
+        - bottom corner edit button
+            - to open dropdown/modal
+                - to edit todo list item
+                    - title
+                    - description
+                    - due date (date picker)
+                    - notes
+                Done
+            Done
+            - add submission functionality
+            Done
+        Done
+    Done
+    6g. delete buttons
+        - main delete button:
+            - removes todo list item card from project list/array
+        Done
+    Done
+    6h. card navigation arrows
+        - top right:
+            - up/down arrows to move card 1 slot higher/lower on project list
+                - moves item 1 slot more to the front/back in array
+        Done
+        - top left:
+            - left and right arrows to move to different project list
+                - moves item to new array
+        Done
+    Done
+    6i. priority rank is displayed via border color on card
+        - rank is tied to color:
+            3 - low priority (yellow)
+            2 - med priority (orange)
+            1 - high priority (red)
+            0 - complete (green)
+        Done
+    6j. allow user to add new checklist items 
+        - to existing checklists
+    Done
+    6k. cards should be "collapsed" by default
+        - https://www.w3schools.com/howto/howto_js_collapsible.asp
+        - shows by default
+            - title
+            - description
+            - due date
+        Done
+        - when expanded shows
+            - notes
+            - checklist
+        Done
+    Done
+Done
+
+7. sidebar styling and layout
+    7a. button to create new project lists
+        - via prompt
+    Done
+    7b. link/button to create new todo list items
+        - via modal form
+        Done
+        - dates limited to date format
+        Done
+        - priority selection limited to 1, 2, 3, or 0
+            - rank is tied to color:
+                3 - low priority (yellow)
+                2 - med priority (orange)
+                1 - high priority (red)
+                0 - complete (green)
+        Done
+        - allow user to input checklist items
+        Done
+    Done
+    7c. view current project lists on sidebar
+    Done
+    7d. refresh project list on sidebar
+        - when cards are re-ordered
+    Done
+Done
+
+8. header styling and layout
+    8a. vertical align
+    Done
+    8b. white instead of black
+    Done
+    8c. sidebar prompt to take username 
+        - and display via header
+    Done
+    8d. have header show date
+    Done
+Done
+
+9. use webpack (optional)
+    9a. consider using date-fns external library
+        - for formatting/manipulating dates and times
+N/A
+
+10. add persistence using Web Storage API
+    10a. localStorage stores data on user's computer
+    10b. set up a function
+        - that saves the projects and todos
+        - to localStorage
+        - every time a new project or todo is added
+    Done
+    10c. create another function
+        - that looks for that data
+        - in localStorage
+        - when the app is first loaded
+    10d. tips:
+        - make sure app doesn't crash
+            - if data wanted from localStorage isn't there
+        - can inspect data saved in localStorage
+            - using DevTools:
+            - open Application tab in DevTools
+            - click on Local Storage tab under Storage
+            - every time data is added/updated/deleted from localStorage
+                - changes will be reflected in DevTools
+        - localStorage uses JSON to send and store data
+            - when data is retrieved
+            - it will also be in JSON format
+            - remember: functions can't be stored in JSON!
+                - figure out how to add methods back to object properties
+                - once they're fetched
+            - use JSON.stringify() to convert objects/arrays into strings
+            - use JSON.parse() to convert strings into their original form
+    10e. things to be saved:
+        - user name in header
+        Done
+        - project cards
+            - after adding new projects
+            Done
+            - after removing projects
+            Done
+            - after editing project titles
+            Done
+            - after reordering projects
+            Done
+        Done
+        - todo cards
+            - after adding new todos
+            Done
+            - after removing todos
+            Done
+            - after editing todo via modal
+            Done
+            - after toggling checklist completion
+            Done
+            - after editing(/deleting) todo checklist items
+            Done
+            - after reordering checklist items
+            Done
+            - after adding new checklist items
+            Done
+            - after toggling todo completion
+            Done
+        Done
+    10f. retrieve saved items
+        - user name in header
+        Done
+    10g. save user color edits
+        - project cards
+        - todo item cards
+
+REMEMBER/IDEAS:
+- set todo items completion to N by default
+Done
+- set todo checklist items to N by default
+Done
+- add uuids to projects for deleting
+Done 
+- add uuids to todo items for deleting
+Done
+- add uuids to todo checklist items for deleting
+Done
+- fix editChecklist to only edit specific checklist item
+Done
+- move todo list item card names inline with top icons
+Done
+- move project list card names inline with top icons
+Done
+- "are you sure" pop up for delete buttons
+Done
+- stop card from collapsing after new checklist item is added
+Done
+- fix trying to move todo list items closing expand section
+Done
+- fix todo card changing back to default color after being edited/having new item added
+Done
+- fix project card changing to default color when being moved
+Done
+- fix todo card changing to default color when being moved to different project list
+Done
+- fix header not extending across page when page horizontally scrolls due to added project cards
+Done
+- adjust priority colors to bootstrap alert colors
+Done
+- add edit priority to edit todo card
+Done
+- fix manually adding checklist item coming out as blank
+Done
+- fix expanding all cards causing issues
+Done
+- adjust fonts
+Done
+- update form inputs to have labels/ids
+
+RESOURCES:
+todo list inspiration
+- https://en.todoist.com
+- https://culturedcode.com/things/
+- https://www.any.do/
+
+dropdown
+- https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+collapsible
+- https://www.w3schools.com/howto/howto_js_collapsible.asp
+
+custom color selection
+- https://stackoverflow.com/questions/52613060/allow-user-to-select-colors
+- https://www.freecodecamp.org/news/create-color-picker-using-html-css-and-javascript/
+
+localStorage:
+- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+- https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/
+- https://blog.logrocket.com/localstorage-javascript-complete-guide/#how-does-localstorage-work
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+- https://stackoverflow.com/questions/71470178/how-to-update-a-specific-value-from-the-array-in-local-storage
+
+[object object]:
+- https://stackoverflow.com/questions/68514507/how-do-i-do-a-new-array-of-objects-from-user-input-in-javascript
