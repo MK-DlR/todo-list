@@ -2,7 +2,7 @@
 
 // edit project title
 export function editProjectTitle(project) {
-  // prompt to collect new project title details - change for UI
+  // prompt to collect new project title details
   let newProjectTitle = prompt("Please enter a new name for your project list");
 
   if (newProjectTitle && newProjectTitle.trim() !== "") {

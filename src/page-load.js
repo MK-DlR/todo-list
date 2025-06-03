@@ -7,6 +7,7 @@ import { toggleTodoComplete } from "./toggle-todo";
 import { deleteTodo } from "./delete-items";
 import { showModal } from "./edit-modal.js";
 import { showNewModal } from "./create-modal.js";
+import { createDefaultProjects } from "./default-project.js";
 
 // svg imports
 import addItem from "./images/addCircle.svg";
@@ -30,18 +31,25 @@ export function saveProjectsToLocal() {
 }
 
 // retrieve from localStorage function
+// retrieve from localStorage function
 export function retrieveProjectsFromLocal() {
   const userData = JSON.parse(localStorage.getItem("allProjects"));
 
-  if (userData) {
-    console.log("User data"); // if stored data found
+  if (userData && userData.length > 0) {
+    console.log("User data found");
     projectsList.length = 0; // clear existing
-    projectsList.push(...userData); // add new items
+    projectsList.push(...userData); // add saved projects
     console.log(projectsList);
     createList();
+    updateSidebarProjectsList(); // update sidebar
   } else {
-    console.log("No stored data"); // if no stored data found
-    createList(); // create project and todo lists normally
+    console.log("No stored data - creating defaults");
+    // only create defaults if projectsList is empty
+    if (projectsList.length === 0) {
+      createDefaultProjects(); // use function from default-project.js
+    }
+    createList();
+    updateSidebarProjectsList(); // update sidebar
   }
 }
 

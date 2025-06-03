@@ -1,5 +1,6 @@
 6/3/25:
 
+- Fix project list deletions and project title edits not accurately reflecting in current project sidebar display after page refresh
 - Testing
 
 5/30/25:
